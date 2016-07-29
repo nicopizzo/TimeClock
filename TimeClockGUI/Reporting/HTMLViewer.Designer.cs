@@ -1,6 +1,6 @@
-﻿namespace TimeClockGUI
+﻿namespace TimeClockGUI.Reporting
 {
-    partial class ReportingSelection
+    partial class HTMLViewer
     {
         /// <summary>
         /// Required designer variable.
@@ -28,23 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
-            // ReportingSelection
+            // webBrowser1
+            // 
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(680, 567);
+            this.webBrowser1.TabIndex = 0;
+            // 
+            // HTMLViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 517);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "ReportingSelection";
+            this.ClientSize = new System.Drawing.Size(680, 567);
+            this.Controls.Add(this.webBrowser1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Name = "HTMLViewer";
             this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.Text = "ReportingSelection";
+            this.Text = "Generated Report";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }

@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TimeClock
+namespace TimeClock.Reporting
 {
-    class Reporting
+    public class PayReport : BaseReport
     {
-        public Reporting()
+
+        public PayReport()
         {
 
         }
