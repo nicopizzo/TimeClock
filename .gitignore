@@ -1,5 +1,3 @@
-# Download this file using PowerShell v3 under Windows with the following comand
-# Invoke-WebRequest https://gist.githubusercontent.com/kmorcinek/2710267/raw/ -OutFile .gitignore
 
 # User-specific files
 *.suo
@@ -185,7 +183,3 @@ $RECYCLE.BIN/
 
 # Visual Studio temp something
 .vs/
-
-#####
-# End of core ignore list, below put you custom 'per project' settings (patterns or path)
-#####
