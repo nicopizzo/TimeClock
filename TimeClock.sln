@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeClockUnitTests", "TimeClockUnitTests\TimeClockUnitTests.csproj", "{7A981D05-8D4A-44AF-B7D5-66379D808E17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeClockGUI", "TimeClockGUI\TimeClockGUI.csproj", "{DB017979-1A98-4B10-BA67-F27FD03179F8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D5804610-D286-428D-A375-19766628A448} = {D5804610-D286-428D-A375-19766628A448}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeClock", "TimeClock\TimeClock.csproj", "{55D27DF8-FD7F-4746-913B-7D7A22D22320}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D5804610-D286-428D-A375-19766628A448} = {D5804610-D286-428D-A375-19766628A448}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeClockData", "TimeClockData\TimeClockData.csproj", "{D5804610-D286-428D-A375-19766628A448}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tester", "Tester\Tester.csproj", "{B7D2B1A5-54E2-4EF2-8875-2E09241A3495}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D5804610-D286-428D-A375-19766628A448} = {D5804610-D286-428D-A375-19766628A448}
+		{55D27DF8-FD7F-4746-913B-7D7A22D22320} = {55D27DF8-FD7F-4746-913B-7D7A22D22320}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A981D05-8D4A-44AF-B7D5-66379D808E17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A981D05-8D4A-44AF-B7D5-66379D808E17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A981D05-8D4A-44AF-B7D5-66379D808E17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A981D05-8D4A-44AF-B7D5-66379D808E17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB017979-1A98-4B10-BA67-F27FD03179F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB017979-1A98-4B10-BA67-F27FD03179F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB017979-1A98-4B10-BA67-F27FD03179F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB017979-1A98-4B10-BA67-F27FD03179F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55D27DF8-FD7F-4746-913B-7D7A22D22320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55D27DF8-FD7F-4746-913B-7D7A22D22320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55D27DF8-FD7F-4746-913B-7D7A22D22320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55D27DF8-FD7F-4746-913B-7D7A22D22320}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5804610-D286-428D-A375-19766628A448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5804610-D286-428D-A375-19766628A448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5804610-D286-428D-A375-19766628A448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5804610-D286-428D-A375-19766628A448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7D2B1A5-54E2-4EF2-8875-2E09241A3495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7D2B1A5-54E2-4EF2-8875-2E09241A3495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7D2B1A5-54E2-4EF2-8875-2E09241A3495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7D2B1A5-54E2-4EF2-8875-2E09241A3495}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
