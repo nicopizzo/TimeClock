@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TimeClock.Repositories;
 
-namespace TimeClock.Reporting
+namespace TimeClockReporting
 {
     public class PayReport : BaseReport
     {
+        private const string REPORT_NAME = "Pay Report";
 
-        public PayReport()
-        {
-
+        public PayReport(IEmployeeInfoRepository employees, IClockHistoryRepository histories)
+            : base(employees, histories)
+        {            
+            ReportName = ReportName;
         }
     }
 }

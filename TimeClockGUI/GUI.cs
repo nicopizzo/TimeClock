@@ -4,7 +4,7 @@ using System.Configuration;
 using System.Windows.Forms;
 using TimeClock.DisplayModels;
 using TimeClockGUI;
-
+using TimeClockGUI.Reporting;
 
 namespace TimeClock
 {
@@ -47,8 +47,8 @@ namespace TimeClock
         {
             try
             {
-                ReportingSelection reporting = new ReportingSelection(_timeClock);
-                reporting.ShowDialog();
+                ReportingWizard wizard = new ReportingWizard(_timeClock);
+                wizard.ShowDialog();
                 SetupClockedInEmployeesGrid();
             }
             catch(Exception ex)

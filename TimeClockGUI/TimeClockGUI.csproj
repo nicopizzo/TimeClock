@@ -86,11 +86,14 @@
     <Compile Include="Reporting\HTMLViewer.Designer.cs">
       <DependentUpon>HTMLViewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reporting\ReportingSelection.cs">
+    <Compile Include="Reporting\ReportingWizard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reporting\ReportingSelection.Designer.cs">
-      <DependentUpon>ReportingSelection.cs</DependentUpon>
+    <Compile Include="Reporting\ReportingWizard.Designer.cs">
+      <DependentUpon>ReportingWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\WizardPages.cs">
+      <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="AddEmployeeForm.resx">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
@@ -114,8 +117,8 @@
     <EmbeddedResource Include="Reporting\HTMLViewer.resx">
       <DependentUpon>HTMLViewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporting\ReportingSelection.resx">
-      <DependentUpon>ReportingSelection.cs</DependentUpon>
+    <EmbeddedResource Include="Reporting\ReportingWizard.resx">
+      <DependentUpon>ReportingWizard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Employee.datasource" />

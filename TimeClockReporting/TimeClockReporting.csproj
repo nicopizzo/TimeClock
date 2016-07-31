@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseReport.cs" />
+    <Compile Include="Converters\IConverter.cs" />
+    <Compile Include="Converters\HTMLReportConverter.cs" />
     <Compile Include="PayReport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
