@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.Cancel = new System.Windows.Forms.Button();
-            this.btnPrevious = new System.Windows.Forms.Button();
             this.btnFinish = new System.Windows.Forms.Button();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.Cancel = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
             this.wizardPages1 = new TimeClockGUI.Reporting.WizardPages();
             this.tabReportSelection = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -58,25 +58,15 @@
             this.panel1.Size = new System.Drawing.Size(635, 84);
             this.panel1.TabIndex = 1;
             // 
-            // btnNext
+            // btnFinish
             // 
-            this.btnNext.Location = new System.Drawing.Point(328, 33);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(75, 23);
-            this.btnNext.TabIndex = 0;
-            this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // Cancel
-            // 
-            this.Cancel.Location = new System.Drawing.Point(83, 33);
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(75, 23);
-            this.Cancel.TabIndex = 1;
-            this.Cancel.Text = "Cancel";
-            this.Cancel.UseVisualStyleBackColor = true;
-            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+            this.btnFinish.Location = new System.Drawing.Point(483, 33);
+            this.btnFinish.Name = "btnFinish";
+            this.btnFinish.Size = new System.Drawing.Size(75, 23);
+            this.btnFinish.TabIndex = 3;
+            this.btnFinish.Text = "Finish";
+            this.btnFinish.UseVisualStyleBackColor = true;
+            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
             // btnPrevious
             // 
@@ -88,15 +78,25 @@
             this.btnPrevious.UseVisualStyleBackColor = true;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
-            // btnFinish
+            // Cancel
             // 
-            this.btnFinish.Location = new System.Drawing.Point(483, 33);
-            this.btnFinish.Name = "btnFinish";
-            this.btnFinish.Size = new System.Drawing.Size(75, 23);
-            this.btnFinish.TabIndex = 3;
-            this.btnFinish.Text = "Finish";
-            this.btnFinish.UseVisualStyleBackColor = true;
-            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
+            this.Cancel.Location = new System.Drawing.Point(83, 33);
+            this.Cancel.Name = "Cancel";
+            this.Cancel.Size = new System.Drawing.Size(75, 23);
+            this.Cancel.TabIndex = 1;
+            this.Cancel.Text = "Cancel";
+            this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(328, 33);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(75, 23);
+            this.btnNext.TabIndex = 0;
+            this.btnNext.Text = "Next";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // wizardPages1
             // 
@@ -151,7 +151,7 @@
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Control;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(195, 25);
+            this.textBox1.Location = new System.Drawing.Point(203, 24);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;

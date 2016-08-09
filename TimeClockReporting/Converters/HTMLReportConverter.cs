@@ -2,9 +2,11 @@
 
 namespace TimeClockReporting.Converters
 {
-    public class HTMLReportConverter : IConverter
+    public class HTMLReportConverter : BaseConverter, IConverter
     {
-        public HTMLReportConverter()
+
+        public HTMLReportConverter(BaseReport report)
+            : base(report)
         {
 
         }

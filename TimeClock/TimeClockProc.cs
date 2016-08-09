@@ -12,9 +12,24 @@ namespace TimeClock
 {
     public class TimeClockProc
     {
+        private CompanyModel _Company;
 
         public TimeClockProc()
         {
+            _Company = GetCompany(Guid.Empty); // need to find a storage for company id
+        }
+
+        private CompanyModel GetCompany(Guid companyId)
+        {
+            try
+            {
+                var companies = new CompanyRepository();
+                return companies.GetCompany(companyId);
+            }
+            catch
+            {
+                throw;
+            }           
         }
 
         public bool ProcessEmployee(EmployeeInfo employee)

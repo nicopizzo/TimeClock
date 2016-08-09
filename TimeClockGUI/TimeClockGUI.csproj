@@ -70,6 +70,12 @@
     <Compile Include="EmployeeLoginForm.Designer.cs">
       <DependentUpon>EmployeeLoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeSelectionForm.Designer.cs">
+      <DependentUpon>EmployeeSelectionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="GUI.cs">
       <SubType>Form</SubType>
@@ -100,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeLoginForm.resx">
       <DependentUpon>EmployeeLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeSelectionForm.resx">
+      <DependentUpon>EmployeeSelectionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI.resx">
       <DependentUpon>GUI.cs</DependentUpon>

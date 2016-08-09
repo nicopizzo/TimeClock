@@ -47,7 +47,7 @@ namespace TimeClock
         {
             try
             {
-                ReportingWizard wizard = new ReportingWizard(_timeClock);
+                ReportingWizard wizard = new ReportingWizard();
                 wizard.ShowDialog();
                 SetupClockedInEmployeesGrid();
             }
@@ -61,7 +61,7 @@ namespace TimeClock
         {
             try
             {
-                AddEmployeeForm form = new AddEmployeeForm(_timeClock, GUIConstants.MODE_EDIT, 1);
+                AddEmployeeForm form = new AddEmployeeForm(_timeClock, GUIConstants.MODE_EDIT, null);
                 form.ShowDialog();
                 SetupClockedInEmployeesGrid();
             }

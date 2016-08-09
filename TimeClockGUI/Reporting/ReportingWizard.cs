@@ -6,17 +6,15 @@ namespace TimeClockGUI.Reporting
 {
     public partial class ReportingWizard : Form
     {
-        private TimeClockProc _timeClock { get; }
 
-        public ReportingWizard(TimeClockProc timeClockProcs)
+        public ReportingWizard()
         {
             InitializeComponent();
-            _timeClock = timeClockProcs;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
