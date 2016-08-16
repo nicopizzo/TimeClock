@@ -6,11 +6,11 @@ namespace TimeClock.Repositories
 {
     public interface ICompanyRepository
     {
-        IQueryable<CompanyModel> AllCompanies { get; }
-        CompanyModel Save(CompanyModel company);
-        void Delete(CompanyModel company);
-        CompanyModel GetCompany(Guid id);
-        IQueryable<CompanyModel> SearchCompany(string companyName);
+        IQueryable<Company> AllCompanies { get; }
+        Company Save(Company company);
+        void Delete(Company company);
+        Company GetCompany(Guid id);
+        IQueryable<Company> SearchCompany(string companyName);
         
     }
 }

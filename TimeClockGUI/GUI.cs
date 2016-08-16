@@ -17,8 +17,7 @@ namespace TimeClock
         public GUI()
         {
             InitializeComponent();
-            this.Text = $"Timeclock - {ConfigurationManager.AppSettings["CompanyName"]}";
-            _timeClock = new TimeClockProc();
+            InitializeProcs();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -27,6 +26,33 @@ namespace TimeClock
             _clockThread.IsBackground = true;
             _clockThread.Start();
             SetupClockedInEmployeesGrid();
+        }
+
+        private void InitializeProcs()
+        {
+            _timeClock = new TimeClockProc();
+            try
+            {
+                if(_timeClock.Company == null)
+                {
+                    this.ShowErrorMessage("No Company found. Please Add Company.");
+                    throw new ArgumentNullException();
+                }
+                this.Text = $"Timeclock - {_timeClock.Company.CompanyName}";
+
+            }
+            catch(ArgumentNullException)
+            {
+                // open create company screen
+                AddCompanyForm form = new AddCompanyForm(_timeClock, GUIConstants.MODE_ADD);
+                form.ShowDialog();
+                InitializeProcs();
+            }
+            catch(Exception ex)
+            {
+                this.ShowErrorMessage(ex.ToString());
+            }
+            
         }
 
         private void addEmployeeToolStripMenuItem_Click(object sender, EventArgs e)

@@ -14,9 +14,9 @@ namespace TimeClockReporting
         protected Dictionary<string, string> Fields { get; set; }
         protected IEmployeeInfoRepository EmployeeRepo { get; private set; }
         protected IClockHistoryRepository ClockHistoryRepo { get; private set; }
-        protected CompanyModel Company { get; private set; }
+        protected Company Company { get; private set; }
 
-        public BaseReport(CompanyModel company, IEmployeeInfoRepository employees, IClockHistoryRepository histories)
+        public BaseReport(Company company, IEmployeeInfoRepository employees, IClockHistoryRepository histories)
         {
             EmployeeRepo = employees;
             ClockHistoryRepo = histories;

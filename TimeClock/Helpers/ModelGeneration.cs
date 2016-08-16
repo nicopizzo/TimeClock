@@ -37,5 +37,23 @@ namespace TimeClock.Helpers
             };
             return history;
         }
+
+        public static Company GenerateCompanyModel(string companyName, string address, string city, string state, string zip, string phone, string fax, string website, string password)
+        {
+            Company company = new Company()
+            {
+                CompanyId = Guid.Empty,
+                CompanyName = companyName,
+                Address = address,
+                City = city,
+                State = state,
+                Zip = zip,
+                PhoneNumber = phone,
+                FaxNumber = fax,
+                Website = website,
+                CompanyPassword = UserSecurity.CreateHash(password)
+            };
+            return company;
+        }
     }
 }

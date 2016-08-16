@@ -12,14 +12,47 @@ namespace TimeClock
 {
     public class TimeClockProc
     {
-        private CompanyModel _Company;
+        public Company Company { get; private set; }
 
         public TimeClockProc()
         {
-            _Company = GetCompany(Guid.Empty); // need to find a storage for company id
+            InitProcs();
         }
 
-        private CompanyModel GetCompany(Guid companyId)
+        private void InitProcs()
+        {
+            try
+            {
+                var id = Settings.Default.CompanyId;
+                Company = GetCompany(id);
+            }
+            catch
+            {
+                throw;
+            }           
+        }
+
+        public void SaveCompanyGuid(Guid id)
+        {
+            Settings.Default.CompanyId = id;
+            Settings.Default.Save();
+        }
+
+        public bool ProcessCompany(Company company)
+        {
+            try
+            {
+                var companies = new CompanyRepository();
+                companies.Save(company);
+            }
+            catch
+            {
+                throw;
+            }
+            return true;
+        }
+
+        public Company GetCompany(Guid companyId)
         {
             try
             {

@@ -52,4 +52,9 @@ namespace TimeClock
         #endregion
 
     }
+
+    public class CONFIG_KEYS
+    {
+        public const string COMPANYID = "CompanyId";
+    }
 }

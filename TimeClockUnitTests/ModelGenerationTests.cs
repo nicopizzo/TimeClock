@@ -39,6 +39,40 @@ namespace TimeClockUnitTests
             Assert.AreEqual(h1.RowId, h2.RowId);
         }
 
+        [TestMethod]
+        public void DoesCompanyModelGenerationWork()
+        {
+            Company c1 = CreateTestCompany();
+            Company c2 = ModelGeneration.GenerateCompanyModel("HMC", "123 Main St", "Hartford", "CT", "06106", "123456789", "987654321", "www.web.com", "password");
+            Assert.AreEqual(c1.CompanyId, c2.CompanyId);
+            Assert.AreEqual(c1.CompanyName, c2.CompanyName);
+            Assert.AreEqual(c1.Address, c2.Address);
+            Assert.AreEqual(c1.City, c2.City);
+            Assert.AreEqual(c1.State, c2.State);
+            Assert.AreEqual(c1.Zip, c2.Zip);
+            Assert.AreEqual(c1.PhoneNumber, c2.PhoneNumber);
+            Assert.AreEqual(c1.FaxNumber, c2.FaxNumber);
+            Assert.AreEqual(c1.Website, c2.Website);
+            Assert.AreNotEqual(c1.CompanyPassword, c2.CompanyPassword);
+        }
+
+        private Company CreateTestCompany()
+        {
+            return new Company
+            {
+                CompanyId = Guid.Empty,
+                CompanyName = "HMC",
+                Address = "123 Main St",
+                City = "Hartford",
+                Zip = "06106",
+                State = "CT",
+                PhoneNumber = "123456789",
+                FaxNumber = "987654321",
+                Website = "www.web.com",
+                CompanyPassword = UserSecurity.CreateHash("password")
+            };
+        }
+
         private EmployeeInfo CreateTestEmployee()
         {
             return new EmployeeInfo

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using TimeClockData;
 
@@ -6,37 +7,92 @@ namespace TimeClock.Repositories
 {
     public class CompanyRepository : ICompanyRepository
     {
+        protected readonly TimeClockContext _context;
+
         public CompanyRepository()
         {
-
+            _context = new TimeClockContext();
         }
 
-        public IQueryable<CompanyModel> AllCompanies
+        public CompanyRepository(TimeClockContext context)
+        {
+            _context = context;
+        }
+
+        public IQueryable<Company> AllCompanies
         {
             get
             {
-                throw new NotImplementedException();
+                try
+                {
+                    return _context.Companies;
+                }
+                catch
+                {
+                    throw;
+                }
             }
         }
 
-        public void Delete(CompanyModel company)
+        public void Delete(Company company)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _context.Companies.Remove(company);
+                _context.SaveChanges();
+            }
+            catch
+            {
+                throw;
+            }         
         }
 
-        public CompanyModel GetCompany(Guid id)
+        public Company GetCompany(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return _context.Companies.Where(c =>
+                    c.CompanyId == id).FirstOrDefault();
+            }
+            catch
+            {
+                throw;
+            }           
         }
 
-        public CompanyModel Save(CompanyModel company)
+        public Company Save(Company company)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (company.CompanyId == Guid.Empty)
+                {
+                    company.CompanyId = Guid.NewGuid();
+                    _context.Companies.Add(company);
+                }
+                else
+                {
+                    _context.Entry(company).State = EntityState.Modified;
+                }
+                _context.SaveChanges();
+                return company;
+            }
+            catch
+            {
+                throw;
+            }
         }
 
-        public IQueryable<CompanyModel> SearchCompany(string companyName)
+        public IQueryable<Company> SearchCompany(string companyName)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return _context.Companies.Where(c =>
+                    c.CompanyName.Trim().ToUpper() == companyName.Trim().ToUpper());
+            }
+            catch
+            {
+                throw;
+            }            
         }
     }
 }

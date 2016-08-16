@@ -11,7 +11,7 @@ namespace TimeClockReporting
     {
         private const string REPORT_NAME = "Pay Report";
 
-        public PayReport(CompanyModel company, IEmployeeInfoRepository employees, IClockHistoryRepository histories)
+        public PayReport(Company company, IEmployeeInfoRepository employees, IClockHistoryRepository histories)
             : base(company, employees, histories)
         {            
             ReportName = REPORT_NAME;

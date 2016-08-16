@@ -1,10 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace TimeClockData
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
     [Table("EmployeeInfo")]
     public partial class EmployeeInfo
     {
@@ -16,6 +17,8 @@ namespace TimeClockData
 
         [Key]
         public int EmployeeId { get; set; }
+
+        public Guid CompanyId { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -48,5 +51,7 @@ namespace TimeClockData
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClockHistory> ClockHistories { get; set; }
+
+        public virtual Company Company { get; set; }
     }
 }
