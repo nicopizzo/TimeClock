@@ -2,7 +2,7 @@
 using TimeClock.Security;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace TimeClockUnitTests
+namespace TimeClock.UnitTests
 {
     [TestClass]
     public class UserSecurityTests

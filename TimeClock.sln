@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeClockUnitTests", "TimeClockUnitTests\TimeClockUnitTests.csproj", "{7A981D05-8D4A-44AF-B7D5-66379D808E17}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeClock.UnitTests", "TimeClockUnitTests\TimeClock.UnitTests.csproj", "{7A981D05-8D4A-44AF-B7D5-66379D808E17}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeClock.GUI", "TimeClockGUI\TimeClock.GUI.csproj", "{DB017979-1A98-4B10-BA67-F27FD03179F8}"
 	ProjectSection(ProjectDependencies) = postProject

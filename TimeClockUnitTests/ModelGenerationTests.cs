@@ -4,7 +4,7 @@ using TimeClock.Data;
 using TimeClock.Security;
 using TimeClock.Helpers;
 
-namespace TimeClockUnitTests
+namespace TimeClock.UnitTests
 {
     [TestClass]
     public class ModelGenerationTests
