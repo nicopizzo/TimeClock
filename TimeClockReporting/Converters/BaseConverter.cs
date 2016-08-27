@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace TimeClock.Reporting.Converters
 {
-    public class BaseConverter
+    public abstract class BaseConverter
     {
-        protected BaseReport Report;
+        protected abstract void ConvertHeader(Dictionary<string, string> headerFields);
 
-        protected BaseConverter(BaseReport report)
-        {
-            Report = report;
-        }
+        protected abstract void ConvertHeaderField(KeyValuePair<string, string> field);
 
+        protected abstract void ConvertBody(Dictionary<string, string> bodyFields);
+
+        protected abstract void ConvertBodyField(KeyValuePair<string, string> field);
     }
 }

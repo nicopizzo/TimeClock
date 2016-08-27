@@ -2,15 +2,20 @@
 using System.Windows.Forms;
 using TimeClock;
 using TimeClock.Reporting;
+using TimeClock.Reporting.Converters;
 
 namespace TimeClock.GUI.Reporting
 {
     public partial class ReportingWizard : Form
     {
 
-        public ReportingWizard()
+        private TimeClockProc _timeClock;
+
+        public ReportingWizard(TimeClockProc procs)
         {
             InitializeComponent();
+            _timeClock = procs;
+            UpdateControls(ReportingWizardTabPages.MainPage);
         }
 
         private ReportingWizardTabPages GetNextPage(ReportingWizardTabPages currentPage)
@@ -71,7 +76,10 @@ namespace TimeClock.GUI.Reporting
 
         private void btnFinish_Click(object sender, EventArgs e)
         {
-            
+            IConverter converter = new HTMLReportConverter();
+            IReport report = new PayReport(_timeClock.Company);
+            report.GenerateReport(2, DateTime.MinValue, DateTime.MaxValue);
+            report.ConvertReport(converter);
             this.Close();
         }
 

@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Data.Entity;
-using TimeClock.Data;
 
-namespace TimeClock.Repositories
+namespace TimeClock.Data.Repositories
 {
     public class EmployeeInfoRepository : RepositoryBase, IEmployeeInfoRepository
     {

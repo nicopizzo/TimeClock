@@ -1,7 +1,6 @@
 ﻿using System;
-using TimeClock.Data;
 
-namespace TimeClock.Repositories
+namespace TimeClock.Data.Repositories
 {
     public class RepositoryBase
     {

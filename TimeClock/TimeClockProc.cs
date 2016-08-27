@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TimeClock.Repositories;
+using TimeClock.Data.Repositories;
 using TimeClock.DisplayModels;
 using TimeClock.Security;
 using TimeClock.Helpers;
@@ -25,6 +25,7 @@ namespace TimeClock
             {
                 var id = Settings.Default.CompanyId;
                 Company = GetCompany(id);
+                SaveCompanyGuid(id);
             }
             catch
             {

@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using TimeClock.Repositories;
+using TimeClock.Data.Repositories;
 using TimeClock.Data;
 using TimeClock.Reporting.Converters;
 using TimeClock.Reporting.Helpers;
 
 namespace TimeClock.Reporting
 {
-    public class BaseReport
+    public class BaseReport : IReport
     {     
-        protected string ReportName { get; set; }
-        protected Dictionary<string, string> HeaderFields { get; }
-        protected Dictionary<string, string> Fields { get; set; }
+        public string ReportName { get; set; }
+        public Dictionary<string, string> HeaderFields { get; }
+        public Dictionary<string, string> Fields { get; set; }
         protected IEmployeeInfoRepository EmployeeRepo { get; private set; }
         protected IClockHistoryRepository ClockHistoryRepo { get; private set; }
         protected Company Company { get; private set; }
@@ -21,6 +21,7 @@ namespace TimeClock.Reporting
             EmployeeRepo = employees;
             ClockHistoryRepo = histories;
             Company = company;
+            HeaderFields = new Dictionary<string, string>();
             Fields = new Dictionary<string, string>();
             SetupHeaderFields();
         }
@@ -54,7 +55,14 @@ namespace TimeClock.Reporting
             }         
         }
 
-        
+        public string GenerateReport(EmployeeInfo employee, DateTime beginRange, DateTime endRange)
+        {
+            throw new NotImplementedException();
+        }
 
+        public string GenerateReport(int employeeId, DateTime beginRange, DateTime endRange)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

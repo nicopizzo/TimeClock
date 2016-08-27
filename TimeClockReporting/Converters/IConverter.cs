@@ -2,6 +2,6 @@
 {
     public interface IConverter
     {
-        string ConvertReport(BaseReport report);
+        string ConvertReport(IReport report);
     }
 }

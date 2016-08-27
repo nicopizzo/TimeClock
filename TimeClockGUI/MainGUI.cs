@@ -73,7 +73,7 @@ namespace TimeClock.GUI
         {
             try
             {
-                ReportingWizard wizard = new ReportingWizard();
+                ReportingWizard wizard = new ReportingWizard(_timeClock);
                 wizard.ShowDialog();
                 SetupClockedInEmployeesGrid();
             }

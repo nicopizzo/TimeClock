@@ -1,7 +1,6 @@
 ﻿using System.Linq;
-using TimeClock.Data;
 
-namespace TimeClock.Repositories
+namespace TimeClock.Data.Repositories
 {
     public interface IEmployeeInfoRepository
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TimeClock.Repositories;
+using TimeClock.Data.Repositories;
 using TimeClock.Data;
 using TimeClock.Reporting.Helpers;
 
@@ -17,13 +17,19 @@ namespace TimeClock.Reporting
             ReportName = REPORT_NAME;
         }
 
-        public string GenerateReport(int employeeId, DateTime beginRange, DateTime endRange)
+        public PayReport(Company company)
+            : base(company, new EmployeeInfoRepository(company.CompanyId), new ClockHistoryRepository(company.CompanyId))
+        {
+            ReportName = REPORT_NAME;
+        }
+
+        public new string GenerateReport(int employeeId, DateTime beginRange, DateTime endRange)
         {
             EmployeeInfo employee = EmployeeRepo.SearchEmployees(employeeId);
             return GenerateReport(employee, beginRange, endRange);
         }
 
-        public string GenerateReport(EmployeeInfo employee, DateTime beginRange, DateTime endRange)
+        public new string GenerateReport(EmployeeInfo employee, DateTime beginRange, DateTime endRange)
         {
 
             var histories = employee.ClockHistories.Where(h => h.ClockInTime >= beginRange && h.ClockInTime <= endRange).ToList();
