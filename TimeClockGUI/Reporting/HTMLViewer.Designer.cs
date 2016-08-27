@@ -1,4 +1,4 @@
-﻿namespace TimeClockGUI.Reporting
+﻿namespace TimeClock.GUI.Reporting
 {
     partial class HTMLViewer
     {

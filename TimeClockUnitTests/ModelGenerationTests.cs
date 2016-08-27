@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TimeClockData;
+using TimeClock.Data;
 using TimeClock.Security;
 using TimeClock.Helpers;
 
@@ -13,7 +13,7 @@ namespace TimeClockUnitTests
         public void DoesEmployeeModelGenerationWork()
         {
             EmployeeInfo emp1 = CreateTestEmployee();
-            EmployeeInfo emp2 = ModelGeneration.GenerateEmployeeModel("Test", "Case", Convert.ToDateTime("3/12/1992"), "1234567890", 100, false, true, "password", "Worker", false);
+            EmployeeInfo emp2 = ModelGeneration.GenerateEmployeeModel(Guid.Empty, "Test", "Case", Convert.ToDateTime("3/12/1992"), "1234567890", 100, false, true, "password", "Worker", false);
             emp2.HiredDate = Convert.ToDateTime("3/12/2016");
             Assert.AreEqual(emp1.EmployeeId, emp2.EmployeeId);
             Assert.AreEqual(emp1.FirstName, emp2.FirstName);
@@ -77,6 +77,7 @@ namespace TimeClockUnitTests
         {
             return new EmployeeInfo
             {
+                CompanyId = Guid.Empty,
                 EmployeeId = 0,
                 FirstName = "Test",
                 LastName = "Case",

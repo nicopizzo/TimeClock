@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace TimeClockGUI.Reporting
+namespace TimeClock.GUI.Reporting
 {
     class WizardPages : TabControl
     {

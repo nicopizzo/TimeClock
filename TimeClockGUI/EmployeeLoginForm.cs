@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using TimeClock;
-using TimeClockData;
+using TimeClock.Data;
 
-namespace TimeClockGUI
+namespace TimeClock.GUI
 {
     public partial class EmployeeLoginForm : Form
     {

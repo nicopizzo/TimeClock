@@ -1,6 +1,6 @@
-﻿namespace TimeClock
+﻿namespace TimeClock.GUI
 {
-    partial class GUI
+    partial class MainGUI
     {
         /// <summary>
         /// Required designer variable.

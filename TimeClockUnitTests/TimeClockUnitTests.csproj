@@ -74,9 +74,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TimeClockData\TimeClockData.csproj">
+    <ProjectReference Include="..\TimeClockData\TimeClock.Data.csproj">
       <Project>{d5804610-d286-428d-a375-19766628a448}</Project>
-      <Name>TimeClockData</Name>
+      <Name>TimeClock.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\TimeClock\TimeClock.csproj">
       <Project>{55d27df8-fd7f-4746-913b-7d7a22d22320}</Project>

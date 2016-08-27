@@ -1,4 +1,4 @@
-﻿namespace TimeClockGUI.Reporting
+﻿namespace TimeClock.GUI.Reporting
 {
     partial class ReportingWizard
     {
@@ -33,9 +33,10 @@
             this.btnPrevious = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
-            this.wizardPages1 = new TimeClockGUI.Reporting.WizardPages();
+            this.wizardPages1 = new TimeClock.GUI.Reporting.WizardPages();
             this.tabReportSelection = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.rdoOtherReport = new System.Windows.Forms.RadioButton();
             this.rdoPayReport = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -122,11 +123,23 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.rdoOtherReport);
             this.panel3.Controls.Add(this.rdoPayReport);
             this.panel3.Location = new System.Drawing.Point(8, 92);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(613, 324);
             this.panel3.TabIndex = 1;
+            // 
+            // rdoOtherReport
+            // 
+            this.rdoOtherReport.AutoSize = true;
+            this.rdoOtherReport.Location = new System.Drawing.Point(71, 65);
+            this.rdoOtherReport.Name = "rdoOtherReport";
+            this.rdoOtherReport.Size = new System.Drawing.Size(86, 17);
+            this.rdoOtherReport.TabIndex = 2;
+            this.rdoOtherReport.TabStop = true;
+            this.rdoOtherReport.Text = "Other Report";
+            this.rdoOtherReport.UseVisualStyleBackColor = true;
             // 
             // rdoPayReport
             // 
@@ -165,7 +178,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(627, 422);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Pay Report";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // ReportingWizard
@@ -202,5 +215,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.RadioButton rdoPayReport;
+        private System.Windows.Forms.RadioButton rdoOtherReport;
     }
 }

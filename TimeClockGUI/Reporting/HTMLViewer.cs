@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TimeClockGUI.Reporting
+namespace TimeClock.GUI.Reporting
 {
     public partial class HTMLViewer : Form
     {

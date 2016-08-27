@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using TimeClockData;
+using TimeClock.Data;
 
 namespace TimeClock.Repositories
 {

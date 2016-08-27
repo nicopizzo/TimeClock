@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Threading;
-using System.Configuration;
 using System.Windows.Forms;
 using TimeClock.DisplayModels;
-using TimeClockGUI;
-using TimeClockGUI.Reporting;
+using TimeClock.GUI;
+using TimeClock.GUI.Reporting;
+using TimeClock.Data;
 
-namespace TimeClock
+namespace TimeClock.GUI
 {
-    public partial class GUI : Form
+    public partial class MainGUI : Form
     {
         private TimeClockProc _timeClock;
         private Thread _clockThread;
         private DateTime _currentTime;
 
-        public GUI()
+        public MainGUI()
         {
             InitializeComponent();
             InitializeProcs();

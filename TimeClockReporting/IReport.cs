@@ -1,7 +1,7 @@
 ﻿using System;
-using TimeClockData;
+using TimeClock.Data;
 
-namespace TimeClockReporting
+namespace TimeClock.Reporting
 {
     public interface IReport
     {

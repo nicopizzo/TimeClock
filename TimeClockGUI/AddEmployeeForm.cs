@@ -2,10 +2,10 @@
 using System.Windows.Forms;
 using TimeClock;
 using TimeClock.Helpers;
-using TimeClockData;
+using TimeClock.Data;
 
 
-namespace TimeClockGUI
+namespace TimeClock.GUI
 {
     public partial class AddEmployeeForm : Form
     {
@@ -75,7 +75,7 @@ namespace TimeClockGUI
         {
             DateTime dob = DateTime.Parse(dtDOB.Text);
             decimal pay = ConvertStringPay(txtPay.Text);
-            EmployeeInfo employee = ModelGeneration.GenerateEmployeeModel(txtFirstName.Text, txtLastName.Text, dob, txtPhone.Text, pay, chkIsSalary.Checked, true, txtPassword.Text, txtPosition.Text, true);
+            EmployeeInfo employee = ModelGeneration.GenerateEmployeeModel(_timeClock.Company.CompanyId, txtFirstName.Text, txtLastName.Text, dob, txtPhone.Text, pay, chkIsSalary.Checked, true, txtPassword.Text, txtPosition.Text, true);
             if (_timeClock.ProcessEmployee(employee))
             {
                 MessageBox.Show("Employee was added", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);

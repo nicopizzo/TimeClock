@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using TimeClock.Repositories;
-using TimeClockData;
-using TimeClockReporting.Converters;
-using TimeClockReporting.Helpers;
+using TimeClock.Data;
+using TimeClock.Reporting.Converters;
+using TimeClock.Reporting.Helpers;
 
-namespace TimeClockReporting
+namespace TimeClock.Reporting
 {
     public class BaseReport
     {     

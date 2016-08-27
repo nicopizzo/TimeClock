@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using TimeClock.Repositories;
-using TimeClockData;
-using TimeClockReporting.Helpers;
+using TimeClock.Data;
+using TimeClock.Reporting.Helpers;
 
-namespace TimeClockReporting
+namespace TimeClock.Reporting
 {
     public class PayReport : BaseReport, IReport
     {

@@ -65,6 +65,7 @@
     <Compile Include="Repositories\IClockHistoryRepository.cs" />
     <Compile Include="Repositories\ICompanyRepository.cs" />
     <Compile Include="Repositories\IEmployeeInfoRepository.cs" />
+    <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Security\UserSecurity.cs" />
     <Compile Include="Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -82,9 +83,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TimeClockData\TimeClockData.csproj">
+    <ProjectReference Include="..\TimeClockData\TimeClock.Data.csproj">
       <Project>{d5804610-d286-428d-a375-19766628a448}</Project>
-      <Name>TimeClockData</Name>
+      <Name>TimeClock.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

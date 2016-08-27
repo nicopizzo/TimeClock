@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeClockUnitTests", "TimeClockUnitTests\TimeClockUnitTests.csproj", "{7A981D05-8D4A-44AF-B7D5-66379D808E17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeClockGUI", "TimeClockGUI\TimeClockGUI.csproj", "{DB017979-1A98-4B10-BA67-F27FD03179F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeClock.GUI", "TimeClockGUI\TimeClock.GUI.csproj", "{DB017979-1A98-4B10-BA67-F27FD03179F8}"
 	ProjectSection(ProjectDependencies) = postProject
 		{D5804610-D286-428D-A375-19766628A448} = {D5804610-D286-428D-A375-19766628A448}
 	EndProjectSection
@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeClock", "TimeClock\Time
 		{D5804610-D286-428D-A375-19766628A448} = {D5804610-D286-428D-A375-19766628A448}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeClockData", "TimeClockData\TimeClockData.csproj", "{D5804610-D286-428D-A375-19766628A448}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeClock.Data", "TimeClockData\TimeClock.Data.csproj", "{D5804610-D286-428D-A375-19766628A448}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tester", "Tester\Tester.csproj", "{B7D2B1A5-54E2-4EF2-8875-2E09241A3495}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tester", "Tester\Tester.csp
 		{55D27DF8-FD7F-4746-913B-7D7A22D22320} = {55D27DF8-FD7F-4746-913B-7D7A22D22320}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeClockReporting", "TimeClockReporting\TimeClockReporting.csproj", "{C3E7BF65-E2FD-4BF4-AFA7-E39330C33E42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeClock.Reporting", "TimeClockReporting\TimeClock.Reporting.csproj", "{C3E7BF65-E2FD-4BF4-AFA7-E39330C33E42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

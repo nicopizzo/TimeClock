@@ -1,5 +1,5 @@
 ﻿
-namespace TimeClockReporting.Helpers
+namespace TimeClock.Reporting.Helpers
 {
     public static class ReportingConstants
     {

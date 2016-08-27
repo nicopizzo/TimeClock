@@ -1,15 +1,16 @@
 ﻿using System;
-using TimeClockData;
+using TimeClock.Data;
 using TimeClock.Security;
 
 namespace TimeClock.Helpers
 {
     public static class ModelGeneration
     {
-        public static EmployeeInfo GenerateEmployeeModel(string firstName, string lastName, DateTime DOB, string phonenumber, decimal pay, bool isSalary, bool isActive, string password, string position, bool justHired)
+        public static EmployeeInfo GenerateEmployeeModel(Guid companyId, string firstName, string lastName, DateTime DOB, string phonenumber, decimal pay, bool isSalary, bool isActive, string password, string position, bool justHired)
         {
             EmployeeInfo employee = new EmployeeInfo()
             {
+                CompanyId = companyId,
                 FirstName = firstName,
                 LastName = lastName,
                 DOB = DOB,

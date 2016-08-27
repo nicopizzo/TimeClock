@@ -1,5 +1,5 @@
 ﻿
-namespace TimeClockGUI
+namespace TimeClock.GUI
 {
     public class GUIConstants
     {

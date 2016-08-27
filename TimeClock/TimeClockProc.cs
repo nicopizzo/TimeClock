@@ -5,7 +5,7 @@ using TimeClock.Repositories;
 using TimeClock.DisplayModels;
 using TimeClock.Security;
 using TimeClock.Helpers;
-using TimeClockData;
+using TimeClock.Data;
 
 
 namespace TimeClock
@@ -69,7 +69,7 @@ namespace TimeClock
         {
             try
             {
-                var employees = new EmployeeInfoRepository();
+                var employees = new EmployeeInfoRepository(Company.CompanyId);
                 employees.Save(employee);
                 
             }
@@ -84,7 +84,7 @@ namespace TimeClock
         {
             try
             {
-                var employees = new EmployeeInfoRepository();
+                var employees = new EmployeeInfoRepository(Company.CompanyId);
                 employees.Delete(employee);
             }
             catch
@@ -98,7 +98,7 @@ namespace TimeClock
         {
             try
             {
-                var employees = new EmployeeInfoRepository();
+                var employees = new EmployeeInfoRepository(Company.CompanyId);
                 return employees.AllEmployees.ToList();
             }
             catch
@@ -111,7 +111,7 @@ namespace TimeClock
         {
             try
             {
-                var employees = new EmployeeInfoRepository();
+                var employees = new EmployeeInfoRepository(Company.CompanyId);
                 return employees.GetClockedInEmployees().ToList();
             }
             catch
@@ -140,7 +140,7 @@ namespace TimeClock
         {
             try
             {
-                var employees = new EmployeeInfoRepository();
+                var employees = new EmployeeInfoRepository(Company.CompanyId);
                 return employees.GetClockedOutEmployees().ToList();              
             }
             catch
@@ -153,7 +153,7 @@ namespace TimeClock
         {
             try
             {
-                var employees = new EmployeeInfoRepository();
+                var employees = new EmployeeInfoRepository(Company.CompanyId);
                 var employee = employees.SearchEmployees(employeeId);
                 return UserSecurity.VerifyPassword(password, employee.Password);               
             }
@@ -182,7 +182,7 @@ namespace TimeClock
             // first verify employee is clocked out
             try
             {
-                var histories = new ClockHistoryRepository();
+                var histories = new ClockHistoryRepository(Company.CompanyId);
                 if (IsClockedOut(employee.EmployeeId))
                 {
                     // save history
@@ -203,7 +203,7 @@ namespace TimeClock
         {
             try
             {
-                var employees = new EmployeeInfoRepository();
+                var employees = new EmployeeInfoRepository(Company.CompanyId);
                 var employee = employees.SearchEmployees(id);
                 if (employee != null)
                 {
@@ -238,7 +238,7 @@ namespace TimeClock
             // first verify employee is clocked in
             try
             {
-                var histories = new ClockHistoryRepository();
+                var histories = new ClockHistoryRepository(Company.CompanyId);
                 if (IsClockedIn(employee.EmployeeId))
                 {
                     // save history
@@ -270,7 +270,7 @@ namespace TimeClock
         {
             try
             {
-                var employees = new EmployeeInfoRepository();
+                var employees = new EmployeeInfoRepository(Company.CompanyId);
                 var employee = employees.SearchEmployees(id);
                 return ClockOutEmployee(employee, outTime);             
             }
@@ -285,7 +285,7 @@ namespace TimeClock
         {
             try
             {
-                var employees = new EmployeeInfoRepository();
+                var employees = new EmployeeInfoRepository(Company.CompanyId);
                 return employees.SearchEmployees(id);                          
             }
             catch
@@ -298,7 +298,7 @@ namespace TimeClock
         {
             try
             {
-                var employees = new EmployeeInfoRepository();
+                var employees = new EmployeeInfoRepository(Company.CompanyId);
                 return employees.SearchEmployees(firstName, lastName).ToList();           
             }
             catch
@@ -312,7 +312,7 @@ namespace TimeClock
             try
             {
                 var result = false;
-                var histories = new ClockHistoryRepository();
+                var histories = new ClockHistoryRepository(Company.CompanyId);
                 var history = histories.GetClockedInHistory(employeeId);
                 if (history != null)
                 {
@@ -331,7 +331,7 @@ namespace TimeClock
             try
             {
                 var result = false;
-                var histories = new ClockHistoryRepository();
+                var histories = new ClockHistoryRepository(Company.CompanyId);
                 var history = histories.GetClockedInHistory(employeeId);
                 if (history == null)
                 {

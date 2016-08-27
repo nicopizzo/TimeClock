@@ -1,4 +1,4 @@
-namespace TimeClockData
+namespace TimeClock.Data
 {
     using System;
     using System.Collections.Generic;

@@ -1,5 +1,4 @@
-﻿using TimeClockData;
-using TimeClock.Security;
+﻿using TimeClock.Security;
 
 
 namespace Tester

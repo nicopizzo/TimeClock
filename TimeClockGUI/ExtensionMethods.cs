@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace TimeClockGUI
+namespace TimeClock.GUI
 {
     public static class ExtensionMethods
     {

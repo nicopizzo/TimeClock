@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace TimeClock
+namespace TimeClock.GUI
 {
     static class Program
     {
@@ -13,7 +13,7 @@ namespace TimeClock
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GUI());
+            Application.Run(new MainGUI());
         }
     }
 }

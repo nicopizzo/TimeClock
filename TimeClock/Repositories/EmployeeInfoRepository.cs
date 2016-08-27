@@ -1,21 +1,21 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Data.Entity;
-using TimeClockData;
+using TimeClock.Data;
 
 namespace TimeClock.Repositories
 {
-    public class EmployeeInfoRepository : IEmployeeInfoRepository
+    public class EmployeeInfoRepository : RepositoryBase, IEmployeeInfoRepository
     {
-        protected readonly TimeClockContext _context;
 
-        public EmployeeInfoRepository(TimeClockContext context)
+        public EmployeeInfoRepository(TimeClockContext context, Guid companyId)
+            : base(context, companyId)
         {
-            _context = context;
         }   
         
-        public EmployeeInfoRepository()
+        public EmployeeInfoRepository(Guid companyId)
+            : base(new TimeClockContext(), companyId)
         {
-            _context = new TimeClockContext();
         }  
 
         public IQueryable<EmployeeInfo> AllEmployees
@@ -24,7 +24,7 @@ namespace TimeClock.Repositories
             {
                 try
                 {
-                    return _context.EmployeeInfoes;
+                    return _context.EmployeeInfoes.Where(e => e.CompanyId == _companyId);
                 }
                 catch
                 {
@@ -50,8 +50,7 @@ namespace TimeClock.Repositories
         {
             try
             {
-                return _context.EmployeeInfoes.Where(e =>
-                e.ClockHistories.Where(c => c.ClockOutTime == null).Any());
+                return AllEmployees.Where(e => e.ClockHistories.Where(c => c.ClockOutTime == null).Any());
             }
             catch
             {
@@ -63,8 +62,7 @@ namespace TimeClock.Repositories
         {
             try
             {
-                return _context.EmployeeInfoes.Where(e =>
-                    !e.ClockHistories.Where(c => c.ClockOutTime == null).Any());
+                return AllEmployees.Where(e => !e.ClockHistories.Where(c => c.ClockOutTime == null).Any());
             }
             catch
             {
@@ -97,7 +95,7 @@ namespace TimeClock.Repositories
         {
             try
             {
-                return _context.EmployeeInfoes.Where(e => e.EmployeeId == id).FirstOrDefault();
+                return AllEmployees.Where(e => e.EmployeeId == id).FirstOrDefault();
             }
             catch
             {
@@ -109,7 +107,7 @@ namespace TimeClock.Repositories
         {
             try
             {
-                return _context.EmployeeInfoes.Where(e =>
+                return AllEmployees.Where(e =>
                     e.FirstName.Trim().ToUpper().Contains(firstName.Trim().ToUpper()) &&
                     e.LastName.Trim().ToUpper().Contains(lastName.Trim().ToUpper()));
             }

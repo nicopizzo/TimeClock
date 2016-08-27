@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using TimeClock;
 using TimeClock.Helpers;
-using TimeClockData;
+using TimeClock.Data;
 using TimeClock.Security;
 using System.Windows.Forms;
 
-namespace TimeClockGUI
+namespace TimeClock.GUI
 {
     public partial class AddCompanyForm : Form
     {
@@ -84,6 +84,7 @@ namespace TimeClockGUI
                 default:
                     throw new NotSupportedException();
             }
+            this.Close();
         }
 
         private void ExecuteAddCompany()

@@ -1,4 +1,4 @@
-﻿namespace TimeClockGUI
+﻿namespace TimeClock.GUI
 {
     partial class EmployeeLoginForm
     {

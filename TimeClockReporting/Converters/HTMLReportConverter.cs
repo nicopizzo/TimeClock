@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TimeClockReporting.Converters
+namespace TimeClock.Reporting.Converters
 {
     public class HTMLReportConverter : BaseConverter, IConverter
     {

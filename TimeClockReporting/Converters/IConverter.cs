@@ -1,4 +1,4 @@
-﻿namespace TimeClockReporting.Converters
+﻿namespace TimeClock.Reporting.Converters
 {
     public interface IConverter
     {

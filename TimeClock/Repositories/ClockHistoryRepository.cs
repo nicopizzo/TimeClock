@@ -1,22 +1,21 @@
 ﻿using System;
 using System.Linq;
 using System.Data.Entity;
-using TimeClockData;
+using TimeClock.Data;
 
 namespace TimeClock.Repositories
 {
-    public class ClockHistoryRepository : IClockHistoryRepository
+    public class ClockHistoryRepository : RepositoryBase, IClockHistoryRepository
     {
-        protected readonly TimeClockContext _context;
 
-        public ClockHistoryRepository(TimeClockContext context)
+        public ClockHistoryRepository(TimeClockContext context, Guid companyId)
+            : base(context, companyId)
         {
-            _context = context;
         }
 
-        public ClockHistoryRepository()
+        public ClockHistoryRepository(Guid companyId)
+            : base(new TimeClockContext(), companyId)
         {
-            _context = new TimeClockContext();
         }
 
         public IQueryable<ClockHistory> ClockHistories
@@ -25,7 +24,11 @@ namespace TimeClock.Repositories
             {
                 try
                 {
-                    return _context.ClockHistories;
+                    return (from c in _context.ClockHistories
+                            join e in _context.EmployeeInfoes
+                            on c.EmployeeId equals e.EmployeeId
+                            where e.CompanyId == _companyId
+                            select c);
                 }
                 catch
                 {
@@ -51,7 +54,7 @@ namespace TimeClock.Repositories
         {
             try
             {
-                return _context.ClockHistories.Where(e => e.EmployeeId == employeeId && e.ClockOutTime == null).FirstOrDefault();
+                return ClockHistories.Where(e => e.EmployeeId == employeeId && e.ClockOutTime == null).FirstOrDefault();
             }
             catch
             {
@@ -86,7 +89,7 @@ namespace TimeClock.Repositories
         {
             try
             {
-                return _context.ClockHistories.Where(h => h.RowId == rowId).FirstOrDefault();
+                return ClockHistories.Where(h => h.RowId == rowId).FirstOrDefault();
             }
             catch
             {

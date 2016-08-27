@@ -1,22 +1,21 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Linq;
-using TimeClockData;
+using TimeClock.Data;
 
 namespace TimeClock.Repositories
 {
-    public class CompanyRepository : ICompanyRepository
+    public class CompanyRepository : RepositoryBase, ICompanyRepository
     {
-        protected readonly TimeClockContext _context;
 
         public CompanyRepository()
+            : base(new TimeClockContext())
         {
-            _context = new TimeClockContext();
         }
 
         public CompanyRepository(TimeClockContext context)
+            : base(context)
         {
-            _context = context;
         }
 
         public IQueryable<Company> AllCompanies

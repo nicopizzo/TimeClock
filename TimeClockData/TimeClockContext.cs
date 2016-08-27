@@ -1,6 +1,6 @@
 using System.Data.Entity;
 
-namespace TimeClockData
+namespace TimeClock.Data
 {
     public partial class TimeClockContext : DbContext
     {

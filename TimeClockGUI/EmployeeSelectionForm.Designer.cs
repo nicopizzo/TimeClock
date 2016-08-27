@@ -1,4 +1,4 @@
-﻿namespace TimeClockGUI
+﻿namespace TimeClock.GUI
 {
     partial class EmployeeSelectionForm
     {
@@ -33,7 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ddlUser = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +70,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.ddlUser);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(411, 130);
@@ -85,13 +85,13 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "User";
             // 
-            // comboBox1
+            // ddlUser
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(172, 56);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
+            this.ddlUser.FormattingEnabled = true;
+            this.ddlUser.Location = new System.Drawing.Point(172, 56);
+            this.ddlUser.Name = "ddlUser";
+            this.ddlUser.Size = new System.Drawing.Size(121, 21);
+            this.ddlUser.TabIndex = 0;
             // 
             // EmployeeSelectionForm
             // 
@@ -105,6 +105,7 @@
             this.MinimizeBox = false;
             this.Name = "EmployeeSelectionForm";
             this.Text = "Select User";
+            this.Load += new System.EventHandler(this.EmployeeSelectionForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -119,6 +120,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ddlUser;
     }
 }
