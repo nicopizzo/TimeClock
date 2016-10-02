@@ -6,6 +6,7 @@ namespace TimeClock.Reporting.Helpers
         #region Header Fields
         public const string HEADER_COMPANY_NAME = "Company Name";
         public const string HEADER_COMPANY_ADDRESS = "Address";
+        public const string HEADER_COMPANY_CITY = "City";
         public const string HEADER_COMPANY_STATE = "State";
         public const string HEADER_COMPANY_ZIP = "Zip Code";
         public const string HEADER_COMPANY_PHONE = "Phone Number";

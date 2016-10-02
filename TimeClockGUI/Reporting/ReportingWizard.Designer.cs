@@ -41,11 +41,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ddlEmployeeSelect = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.wizardPages1.SuspendLayout();
             this.tabReportSelection.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -173,6 +176,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.ddlEmployeeSelect);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -180,6 +185,23 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Pay Report";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // ddlEmployeeSelect
+            // 
+            this.ddlEmployeeSelect.FormattingEnabled = true;
+            this.ddlEmployeeSelect.Location = new System.Drawing.Point(243, 73);
+            this.ddlEmployeeSelect.Name = "ddlEmployeeSelect";
+            this.ddlEmployeeSelect.Size = new System.Drawing.Size(276, 21);
+            this.ddlEmployeeSelect.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(184, 76);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Employee";
             // 
             // ReportingWizard
             // 
@@ -197,6 +219,8 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -216,5 +240,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.RadioButton rdoPayReport;
         private System.Windows.Forms.RadioButton rdoOtherReport;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox ddlEmployeeSelect;
     }
 }

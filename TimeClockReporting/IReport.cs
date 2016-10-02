@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TimeClock.Data;
 using TimeClock.Reporting.Converters;
+using TimeClock.Reporting.Helpers;
 
 namespace TimeClock.Reporting
 {
@@ -9,9 +10,9 @@ namespace TimeClock.Reporting
     {
         string ReportName { get; }
         Dictionary<string, string> HeaderFields { get; }
-        Dictionary<string, string> Fields { get; }
-        string GenerateReport(EmployeeInfo employee, DateTime beginRange, DateTime endRange);
-        string GenerateReport(int employeeId, DateTime beginRange, DateTime endRange);
+        ReportingFields Fields { get; }
+        string GenerateReport(IEnumerable<EmployeeInfo> employees, DateTime beginRange, DateTime endRange);
+        string GenerateReport(IEnumerable<int> employeeIds, DateTime beginRange, DateTime endRange);
         string ConvertReport(IConverter converter);
     }
 }

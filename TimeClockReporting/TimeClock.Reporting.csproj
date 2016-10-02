@@ -45,7 +45,10 @@
     <Compile Include="Converters\BaseConverter.cs" />
     <Compile Include="Converters\IConverter.cs" />
     <Compile Include="Converters\HTMLReportConverter.cs" />
+    <Compile Include="Converters\XMLReportConverter.cs" />
+    <Compile Include="Helpers\ExtensionMethods.cs" />
     <Compile Include="Helpers\ReportingConstants.cs" />
+    <Compile Include="Helpers\ReportingFields.cs" />
     <Compile Include="IReport.cs" />
     <Compile Include="PayReport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

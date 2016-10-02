@@ -23,25 +23,33 @@ namespace TimeClock.Reporting
             ReportName = REPORT_NAME;
         }
 
-        public new string GenerateReport(int employeeId, DateTime beginRange, DateTime endRange)
+        public override string GenerateReport(IEnumerable<int> employeeIds, DateTime beginRange, DateTime endRange)
         {
-            EmployeeInfo employee = EmployeeRepo.SearchEmployees(employeeId);
-            return GenerateReport(employee, beginRange, endRange);
+            var employees = new List<EmployeeInfo>();
+            foreach(var id in employeeIds)
+            {
+                var employee = EmployeeRepo.SearchEmployees(id);
+                employees.Add(employee);
+            }
+            
+            return GenerateReport(employees, beginRange, endRange);
         }
 
-        public new string GenerateReport(EmployeeInfo employee, DateTime beginRange, DateTime endRange)
+        public override string GenerateReport(IEnumerable<EmployeeInfo> employees, DateTime beginRange, DateTime endRange)
         {
+            foreach(var employee in employees)
+            {
+                Fields.AddEmployee(employee);
+                var histories = employee.ClockHistories.Where(h => h.ClockInTime >= beginRange && h.ClockInTime <= endRange).ToList();
+                var totalHours = CalculateHours(histories);
+                var totalPay = CalculatePay(totalHours, employee.Pay.Value);
 
-            var histories = employee.ClockHistories.Where(h => h.ClockInTime >= beginRange && h.ClockInTime <= endRange).ToList();
-            var totalHours = CalculateHours(histories);
-            var totalPay = CalculatePay(totalHours, employee.Pay.Value);
-
-            AddField(ReportingConstants.FIELD_REPORT_RANGE, $"{beginRange.ToString("MM/dd/yyyy")} - {endRange.ToString("MM/dd/yyyy")}");
-            AddField(ReportingConstants.FIELD_EMPLOYEE_NAME, $"{employee.FirstName} {employee.LastName}");
-            AddField(ReportingConstants.FIELD_TOTAL_HOURS, totalHours.ToString());
-            AddField(ReportingConstants.FIELD_PAYRATE, employee.Pay.Value.ToString());
-            AddField(ReportingConstants.FIELD_TOTAL_PAY, totalPay.ToString());
-
+                AddField(ReportingConstants.FIELD_REPORT_RANGE, $"{beginRange.ToString("MM/dd/yyyy")} - {endRange.ToString("MM/dd/yyyy")}");
+                AddField(ReportingConstants.FIELD_EMPLOYEE_NAME, $"{employee.FirstName} {employee.LastName}");
+                AddField(ReportingConstants.FIELD_TOTAL_HOURS, totalHours.ToString());
+                AddField(ReportingConstants.FIELD_PAYRATE, employee.Pay.Value.ToString());
+                AddField(ReportingConstants.FIELD_TOTAL_PAY, totalPay.ToString());
+            }
 
             return string.Empty;
             

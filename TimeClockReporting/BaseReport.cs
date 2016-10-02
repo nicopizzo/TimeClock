@@ -11,7 +11,7 @@ namespace TimeClock.Reporting
     {     
         public string ReportName { get; set; }
         public Dictionary<string, string> HeaderFields { get; }
-        public Dictionary<string, string> Fields { get; set; }
+        public ReportingFields Fields { get; set; }
         protected IEmployeeInfoRepository EmployeeRepo { get; private set; }
         protected IClockHistoryRepository ClockHistoryRepo { get; private set; }
         protected Company Company { get; private set; }
@@ -22,7 +22,7 @@ namespace TimeClock.Reporting
             ClockHistoryRepo = histories;
             Company = company;
             HeaderFields = new Dictionary<string, string>();
-            Fields = new Dictionary<string, string>();
+            Fields = new ReportingFields();
             SetupHeaderFields();
         }
 
@@ -33,7 +33,7 @@ namespace TimeClock.Reporting
 
         protected void AddField(string key, string value)
         {
-            Fields.Add(key, value);
+            Fields.AddField(key, value);
         }
 
         private void AddHeaderField(string key, string value)
@@ -47,6 +47,7 @@ namespace TimeClock.Reporting
             {
                 AddHeaderField(ReportingConstants.HEADER_COMPANY_NAME, Company.CompanyName);
                 AddHeaderField(ReportingConstants.HEADER_COMPANY_ADDRESS, Company.Address);
+                AddHeaderField(ReportingConstants.HEADER_COMPANY_CITY, Company.City);
                 AddHeaderField(ReportingConstants.HEADER_COMPANY_STATE, Company.State);
                 AddHeaderField(ReportingConstants.HEADER_COMPANY_ZIP, Company.Zip);
                 AddHeaderField(ReportingConstants.HEADER_COMPANY_PHONE, Company.PhoneNumber);
@@ -55,12 +56,12 @@ namespace TimeClock.Reporting
             }         
         }
 
-        public string GenerateReport(EmployeeInfo employee, DateTime beginRange, DateTime endRange)
+        public virtual string GenerateReport(IEnumerable<EmployeeInfo> employee, DateTime beginRange, DateTime endRange)
         {
             throw new NotImplementedException();
         }
 
-        public string GenerateReport(int employeeId, DateTime beginRange, DateTime endRange)
+        public virtual string GenerateReport(IEnumerable<int> employeeId, DateTime beginRange, DateTime endRange)
         {
             throw new NotImplementedException();
         }

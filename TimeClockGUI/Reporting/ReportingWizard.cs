@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using TimeClock;
 using TimeClock.Reporting;
@@ -78,8 +79,10 @@ namespace TimeClock.GUI.Reporting
         {
             IConverter converter = new HTMLReportConverter();
             IReport report = new PayReport(_timeClock.Company);
-            report.GenerateReport(2, DateTime.MinValue, DateTime.MaxValue);
-            report.ConvertReport(converter);
+            report.GenerateReport(new List<int>() { 2 }, DateTime.MinValue, DateTime.MaxValue);
+            var reportLoc = report.ConvertReport(converter);
+            var htmlviewer = new HTMLViewer(reportLoc);
+            htmlviewer.Show();
             this.Close();
         }
 
@@ -90,7 +93,21 @@ namespace TimeClock.GUI.Reporting
 
         private void UpdateControls(ReportingWizardTabPages currentPage)
         {
+            switch (currentPage)
+            {
+                case ReportingWizardTabPages.MainPage:
+                default:
+                    btnPrevious.Enabled = false;
+                    btnFinish.Enabled = false;
+                    btnNext.Enabled = true;
+                    break;
 
+                case ReportingWizardTabPages.PayReport:
+                    btnPrevious.Enabled = true;
+                    btnFinish.Enabled = true;
+                    btnNext.Enabled = false;
+                    break;
+            }
         }
     }
 
@@ -98,6 +115,8 @@ namespace TimeClock.GUI.Reporting
     {
         MainPage = 0,
         PayReport = 1,
-        OtherReport = 2
+        OtherReport = 2,
+        EmployeeSelect = 3,
+        OutputSelection = 4
     }
 }
